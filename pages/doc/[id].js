@@ -9,7 +9,6 @@ import Login from '../../components/Login';
 
 function Doc() {
   const [session] = useSession();
-  if (!session) return <Login />;
 
   // Getting id from the router
   const router = useRouter();
@@ -20,6 +19,7 @@ function Doc() {
     db.collection('userDocs').doc(session.user.email).collection('docs').doc(id)
   );
 
+  if (!session) return <Login />;
   // Redirects the user if user tries to access a URL which they do not have access to..
   if (!loadingSnapshot && !snapshot?.data()?.fileName) {
     router.replace('/');
