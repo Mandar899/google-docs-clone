@@ -10,6 +10,7 @@ function Login() {
         height='300'
         width='550'
         objectFit='contain'
+        alt='logo'
       />
       <Button
         className='w-44 mt-10'
