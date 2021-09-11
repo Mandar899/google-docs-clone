@@ -22,7 +22,7 @@ export default function Home() {
   const [snapshot] = useCollectionOnce(
     db
       .collection('userDocs')
-      .doc(session.user.email)
+      .doc(session?.user?.email)
       .collection('docs')
       .orderBy('timestamp', 'desc')
   );
